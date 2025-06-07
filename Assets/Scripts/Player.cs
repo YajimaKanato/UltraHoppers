@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     Coroutine coroutine;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !falling)
+        if (Input.GetMouseButtonDown(0) && !playerShot)
         {
             mousePos[0] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[0].z = 0;
@@ -40,14 +40,14 @@ public class Player : MonoBehaviour
                 mouseOnPlayer = true;
             }
         }
-        if (Input.GetMouseButton(0) && mouseOnPlayer && !falling)
+        if (Input.GetMouseButton(0) && mouseOnPlayer && !playerShot)
         {
             mousePos[1] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[1].z = 0;
             transform.right = mousePos[0] - mousePos[1];
             
         }
-        if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !falling)
+        if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !playerShot)
         {
             playerShot = true;
             rigid2d.bodyType = RigidbodyType2D.Dynamic;
@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
             if (coroutine == null && rigid2d.linearVelocity.y < 1)
             {
                 coroutine = StartCoroutine(RotateCoroutine());
+                falling = true;
             }
         }
 
