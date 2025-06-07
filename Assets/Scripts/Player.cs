@@ -43,9 +43,9 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0) && mouseOnPlayer && !falling)
         {
             mousePos[1] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            //if (mousePos[1].x)
             mousePos[1].z = 0;
             transform.right = mousePos[0] - mousePos[1];
+            
         }
         if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !falling)
         {
