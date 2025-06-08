@@ -16,7 +16,6 @@ public class Meter : MonoBehaviour
     Text text;
 
 
-
     private void Start()
     {
         image = image.GetComponent<Image>();

@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     float jump;
 
+    [Header("GameDirector")]
+    [SerializeField]
+    GameDirector director;
+
     Vector3[] mousePos = new Vector3[2];
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
     bool playerShot = false;//ショットしたかどうか
@@ -94,8 +98,12 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
-    float ShotForce()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        return 0;
+        director.PlayerStop();
+        rigid2d.bodyType = RigidbodyType2D.Kinematic;
+        rigid2d.linearVelocity = Vector3.zero;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = -99;
     }
 }
