@@ -7,10 +7,6 @@ public class Meter : MonoBehaviour
     [SerializeField]
     GameDirector director;
 
-    [Header("MeterBack")]
-    [SerializeField]
-    Image image;
-
     [Header("Meter")]
     [SerializeField]
     Text text;
@@ -18,7 +14,6 @@ public class Meter : MonoBehaviour
 
     private void Start()
     {
-        image = image.GetComponent<Image>();
         text = text.GetComponent<Text>();
     }
 
