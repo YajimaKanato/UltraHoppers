@@ -29,7 +29,7 @@ public class TreeGene : MonoBehaviour
         {
             int rand = Random.Range(0, sceneObject.Count);
             generatCount++;
-            Instantiate(sceneObject[rand], new Vector3(width * generatCount + 10, transform.position.y + 2, transform.position.z), Quaternion.identity);
+            Instantiate(sceneObject[rand], new Vector3(width * generatCount + 10, transform.position.y + 2, transform.position.z), Quaternion.identity).transform.parent = this.transform;
         }
     }
 }

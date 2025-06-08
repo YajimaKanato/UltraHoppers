@@ -27,7 +27,7 @@ public class SceneObjectGene : MonoBehaviour
         if (player.transform.position.x - basePos.x > width * generatCount)
         {
             generatCount++;
-            Instantiate(sceneObject, new Vector3(width * generatCount, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(sceneObject, new Vector3(width * generatCount, transform.position.y, transform.position.z), Quaternion.identity).transform.parent = this.transform;
         }
     }
 }

@@ -63,9 +63,9 @@ public class Player : MonoBehaviour
         {
             if (coroutine == null && rigid2d.linearVelocity.y < 1)
             {
+                animator.SetBool("Fly", true);
                 coroutine = StartCoroutine(RotateCoroutine());
                 falling = true;
-                animator.SetBool("Fly", true);
             }
         }
 
@@ -86,7 +86,6 @@ public class Player : MonoBehaviour
             transform.Rotate(0, 0, -0.5f);
             yield return null;
         }
-        falling = true;
     }
 
     IEnumerator ForceCoroutine()
