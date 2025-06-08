@@ -14,28 +14,33 @@ public class Player : MonoBehaviour
     [SerializeField]
     float lift;
 
+    [Header("Jump")]
+    [Tooltip("跳躍力")]
+    [SerializeField]
+    float jump;
 
     Vector3[] mousePos = new Vector3[2];
-    bool mouseOnPlayer = false;
-    bool playerShot = false;
-    bool falling = false;
+    bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
+    bool playerShot = false;//ショットしたかどうか
+    bool falling = false;//落下し始めたかどうか
     Rigidbody2D rigid2d;
+    Animator animator;
+    Coroutine coroutine;
 
-    Coroutine addForceCoroutine;
     private void Start()
     {
         rigid2d = GetComponent<Rigidbody2D>();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
+        animator = GetComponent<Animator>();
     }
 
-    Coroutine coroutine;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !playerShot)
         {
             mousePos[0] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[0].z = 0;
-            if (mousePos[0].magnitude < 1.0f)
+            if (mousePos[0].magnitude < 1.0f)//マウスとプレイヤーの距離
             {
                 mouseOnPlayer = true;
             }
@@ -44,14 +49,14 @@ public class Player : MonoBehaviour
         {
             mousePos[1] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[1].z = 0;
-            transform.right = mousePos[0] - mousePos[1];
-            
+            transform.right = mousePos[0] - mousePos[1];//マウスのドラッグを取得
         }
         if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !playerShot)
         {
             playerShot = true;
             rigid2d.bodyType = RigidbodyType2D.Dynamic;
-            rigid2d.AddForce((mousePos[0] - mousePos[1]) * 30 / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
+            rigid2d.mass = mass;
+            rigid2d.AddForce((mousePos[0] - mousePos[1]) * jump / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
         }
 
         if (playerShot)
@@ -60,6 +65,7 @@ public class Player : MonoBehaviour
             {
                 coroutine = StartCoroutine(RotateCoroutine());
                 falling = true;
+                animator.SetBool("Fly", true);
             }
         }
 
@@ -67,7 +73,6 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("滞空");
                 StartCoroutine(ForceCoroutine());
             }
         }
@@ -86,7 +91,7 @@ public class Player : MonoBehaviour
 
     IEnumerator ForceCoroutine()
     {
-        rigid2d.AddForce(Vector3.up * 1f, ForceMode2D.Impulse);
+        rigid2d.AddForce(Vector3.up * lift, ForceMode2D.Impulse);
         yield return null;
     }
 

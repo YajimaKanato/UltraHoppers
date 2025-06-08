@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    [Header("Player")]
-    [SerializeField]
-    Transform player;
+    GameObject player;
     Vector3 pos;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
-        pos = player.position;
-        if (player.position.x >= -7)
+        pos = player.transform.position;
+        if (player.transform.position.x >= -7)
         {
             pos.x += 7;
         }
@@ -17,7 +20,7 @@ public class CameraMove : MonoBehaviour
         {
             pos.x = 0;
         }
-        if (player.position.y < 75 - 7)
+        if (player.transform.position.y < 75 - 7)
         {
             pos.y += 2;
         }
