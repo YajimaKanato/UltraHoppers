@@ -17,7 +17,11 @@ public class Player : MonoBehaviour
     [Header("Jump")]
     [Tooltip("跳躍力")]
     [SerializeField]
-    float jump;
+    float maxJump;
+
+    [Header("GaugeSpeed")]
+    [Tooltip("ゲージ速度（何秒でゲージが満タンになるか）")]
+    public float speed;
 
     [Header("Arrow")]
     [SerializeField]
@@ -26,6 +30,10 @@ public class Player : MonoBehaviour
     [Header("GameDirector")]
     [SerializeField]
     GameDirector director;
+
+    [Header("Gauge")]
+    [SerializeField]
+    Gauge gauge;
 
     Vector3[] mousePos = new Vector3[2];
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
@@ -46,6 +54,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !playerShot)
         {
+            gauge.StartCharge();
             mousePos[0] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[0].z = 0;
             if (mousePos[0].magnitude < 1.0f)//マウスとプレイヤーの距離
@@ -61,16 +70,14 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !playerShot)
         {
+            gauge.StopCharge();
             playerShot = true;
-            rigid2d.bodyType = RigidbodyType2D.Dynamic;
-            rigid2d.mass = mass;
-            rigid2d.AddForce((mousePos[0] - mousePos[1]) * jump / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
-            arrow.SetActive(false);
+            StartCoroutine(ShotCoroutine());
         }
 
         if (playerShot)
         {
-            if (coroutine == null && rigid2d.linearVelocity.y < 1)
+            if (coroutine == null && rigid2d.linearVelocity.y < 1 && rigid2d.bodyType == RigidbodyType2D.Dynamic)
             {
                 animator.SetBool("Fly", true);
                 coroutine = StartCoroutine(RotateCoroutine());
@@ -95,6 +102,16 @@ public class Player : MonoBehaviour
             transform.Rotate(0, 0, -0.5f);
             yield return null;
         }
+    }
+
+    IEnumerator ShotCoroutine()
+    {
+        Debug.Log(gauge.GetComponent<Gauge>().charge);
+        yield return new WaitForSeconds(0.5f);
+        rigid2d.bodyType = RigidbodyType2D.Dynamic;
+        rigid2d.mass = mass;
+        rigid2d.AddForce((mousePos[0] - mousePos[1]) * maxJump * (1 / 3f + 2 * gauge.GetComponent<Gauge>().charge / 3f) / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
+        arrow.SetActive(false);
     }
 
     IEnumerator ForceCoroutine()
