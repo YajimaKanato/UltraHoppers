@@ -4,23 +4,19 @@ using System.Collections.Generic;
 
 public class GameDirector : MonoBehaviour
 {
-    [Header("Player")]
+    [Header("Players")]
     [SerializeField]
-    Transform player;
+    GameObject[] players;
+    GameObject player;
     Vector3 basePos;
     float nowPlayerPos;
     bool playerStop = false;
-
-    private void Start()
-    {
-        basePos = player.position;
-    }
 
     public float getMeter()
     {
         if (!playerStop)
         {
-            nowPlayerPos = player.position.x - basePos.x;
+            nowPlayerPos = player.transform.position.x - basePos.x;
         }
         return nowPlayerPos;
     }
@@ -51,5 +47,11 @@ public class GameDirector : MonoBehaviour
         playerStop = true;
         ActiveObject();
         InActiveObject();
+    }
+
+    public void PlayerSelect(int index)
+    {
+        player = players[index];
+        basePos = player.transform.position;
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class Gauge : MonoBehaviour
 {
-    [Header("Player")]
-    [SerializeField]
     GameObject player;
 
     [Header("Review")]
@@ -14,6 +12,11 @@ public class Gauge : MonoBehaviour
 
     Coroutine coroutine;
     public float charge;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     public void StartCharge()
     {
         if (coroutine == null)

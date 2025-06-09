@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
 
     IEnumerator SceneChangeCoroutine(string name)
     {
-        if (name == "InGame")
+        if (name == "Select")
         {
             player.GetComponent<TitlePlayer>().GameStart();
             yield return new WaitForSeconds(0.4f);
