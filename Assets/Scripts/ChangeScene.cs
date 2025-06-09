@@ -25,7 +25,7 @@ public class ChangeScene : MonoBehaviour
         if (name == "InGame")
         {
             player.GetComponent<TitlePlayer>().GameStart();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
         }
 
         Debug.Log("FadeOut");
