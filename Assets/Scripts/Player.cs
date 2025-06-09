@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     float jump;
 
+    [Header("Arrow")]
+    [SerializeField]
+    GameObject arrow;
+
     [Header("GameDirector")]
     [SerializeField]
     GameDirector director;
@@ -61,6 +65,7 @@ public class Player : MonoBehaviour
             rigid2d.bodyType = RigidbodyType2D.Dynamic;
             rigid2d.mass = mass;
             rigid2d.AddForce((mousePos[0] - mousePos[1]) * jump / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
+            arrow.SetActive(false);
         }
 
         if (playerShot)
