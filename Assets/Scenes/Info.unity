@@ -171,7 +171,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grounds
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5775514003439421972, guid: 49f27e69121c081499db055d7f02eec5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -266,7 +267,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundsBG
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3924901218510725266, guid: 45ea87a17808486459aa6c4bb3da308a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
