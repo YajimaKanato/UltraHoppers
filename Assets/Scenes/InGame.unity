@@ -2383,10 +2383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
+  - {fileID: 1607354577}
   - {fileID: 190179224}
   - {fileID: 833788050}
   - {fileID: 1910743649}
-  - {fileID: 1607354577}
   result: {fileID: 1688622326}
   meter: {fileID: 370311645}
 --- !u!4 &1399117635
@@ -2656,6 +2656,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1269570899, guid: 331ee2a93248fd443869aa1bbe270937, type: 3}
+    - target: {fileID: 3350673536608434072, guid: f17f21325addd2144a8cbe65626e62d9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dbd9ccb0ca736f6459c9a219eace49cc, type: 2}
     - target: {fileID: 3350673536608434073, guid: f17f21325addd2144a8cbe65626e62d9, type: 3}
       propertyPath: m_Name
       value: GaugeFast
