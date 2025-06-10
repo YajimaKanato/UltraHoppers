@@ -16,7 +16,7 @@ public class GameDirector : MonoBehaviour
     {
         if (!playerStop)
         {
-            nowPlayerPos = player.transform.position.x - basePos.x;
+            nowPlayerPos = players[ChangeInformation.Index].transform.position.x - basePos.x;
         }
         return nowPlayerPos;
     }
@@ -49,9 +49,10 @@ public class GameDirector : MonoBehaviour
         InActiveObject();
     }
 
-    public void PlayerSelect(int index)
+    private void Awake()
     {
-        player = players[index];
-        basePos = player.transform.position;
+        //player = players[ChangeInformation.Index];
+        players[ChangeInformation.Index].SetActive(true);
+        basePos = players[ChangeInformation.Index].transform.position;
     }
 }

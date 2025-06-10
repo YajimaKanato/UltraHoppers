@@ -40,16 +40,16 @@ public class Gauge : MonoBehaviour
         charge = 0.0f;
         while (true)
         {
-            charge += Time.deltaTime / player.GetComponent<Player>().speed;
-            if (charge >= 1.0f)
-            {
-                charge = 1.0f;
-            }
-            this.gameObject.GetComponent<Image>().fillAmount = charge;
             if (charge == 1.0f)
             {
                 charge = 0.0f;
             }
+            charge += Time.deltaTime / player.GetComponent<Player>().speed;
+            if (charge > 1.0f)
+            {
+                charge = 1.0f;
+            }
+            this.gameObject.GetComponent<Image>().fillAmount = charge;
             yield return null;
         }
     }

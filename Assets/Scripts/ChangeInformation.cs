@@ -7,7 +7,8 @@ public class ChangeInformation : MonoBehaviour
     [SerializeField]
     List<GameObject> info;
 
-    private int index = 0;
+    private static int index = 0;
+    public static int Index {  get { return index; } }
     
     public void InfoChange(int i)
     {

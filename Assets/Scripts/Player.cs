@@ -4,11 +4,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //プレイヤーごとのステータス
-    [Header("Mass")]
-    [Tooltip("体重")]
-    [SerializeField]
-    float mass;
-
     [Header("Lift")]
     [Tooltip("揚力")]
     [SerializeField]
@@ -109,10 +104,9 @@ public class Player : MonoBehaviour
         Debug.Log(gauge.GetComponent<Gauge>().charge);
         yield return new WaitForSeconds(0.5f);
         rigid2d.bodyType = RigidbodyType2D.Dynamic;
-        rigid2d.mass = mass;
-        rigid2d.AddForce((mousePos[0] - mousePos[1]) * maxJump * (1 / 3f + 2 * gauge.GetComponent<Gauge>().charge / 3f) / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
+        rigid2d.AddForce((mousePos[0] - mousePos[1]) * maxJump * (1 / 3f + 2 / 3f) / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
         arrow.SetActive(false);
-    }
+    }//* gauge.GetComponent<Gauge>().charge 
 
     IEnumerator ForceCoroutine()
     {
