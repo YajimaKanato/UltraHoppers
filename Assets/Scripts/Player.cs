@@ -30,6 +30,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     Gauge gauge;
 
+    [Header("GaugeMax")]
+    [SerializeField]
+    GameObject gaugeMax;
+
+    [Header("Space")]
+    [SerializeField]
+    GameObject spaceKey;
+
     Vector3[] mousePos = new Vector3[2];
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
     bool playerShot = false;//ショットしたかどうか
@@ -65,6 +73,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && mouseOnPlayer && !playerShot)
         {
+            gaugeMax.SetActive(false);
             gauge.StopCharge();
             playerShot = true;
             StartCoroutine(ShotCoroutine());
@@ -72,7 +81,12 @@ public class Player : MonoBehaviour
 
         if (playerShot)
         {
-            if (coroutine == null && rigid2d.linearVelocity.y < 1 && rigid2d.bodyType == RigidbodyType2D.Dynamic)
+            if(rigid2d.linearVelocity.y < 2.0f && rigid2d.bodyType == RigidbodyType2D.Dynamic && spaceKey.activeInHierarchy == false)
+            {
+                spaceKey.SetActive(true);
+            }
+
+            if (coroutine == null && rigid2d.linearVelocity.y < 1.0f && rigid2d.bodyType == RigidbodyType2D.Dynamic)
             {
                 animator.SetBool("Fly", true);
                 coroutine = StartCoroutine(RotateCoroutine());
@@ -117,6 +131,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         director.PlayerStop();
+        spaceKey.SetActive(false);
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         rigid2d.linearVelocity = Vector3.zero;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
