@@ -1,34 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeInformation : MonoBehaviour
+public class ChangeCredit : MonoBehaviour
 {
-    [Header("ChangeInfo")]
+    [Header("ChangeCredit")]
     [SerializeField]
-    List<GameObject> info;
+    List<GameObject> credit;
 
     private static int index = 0;
 
     private void Start()
     {
-        info[index].SetActive(true);
+        credit[index].SetActive(true);
     }
 
     public void InfoChange(int i)
     {
-        if (info.Count == 0 || info == null)
+        if (credit.Count == 0 || credit == null)
         {
             Debug.Log("ƒŠƒXƒg‚ª‹ó‚Å‚·");
             return;
         }
 
-        info[index].SetActive(false);
+        credit[index].SetActive(false);
         index += i;
         if (index < 0)
         {
-            index = info.Count - 1;
+            index = credit.Count - 1;
         }
-        index %= info.Count;
-        info[index].SetActive(true);
+        index %= credit.Count;
+        credit[index].SetActive(true);
     }
 }
