@@ -61,12 +61,12 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !playerShot)
         {
-            gauge.StartCharge();
             mousePos[0] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[0].z = 0;
             if (mousePos[0].magnitude < 1.0f)//マウスとプレイヤーの距離
             {
                 mouseOnPlayer = true;
+                gauge.StartCharge();
             }
         }
         if (Input.GetMouseButton(0) && mouseOnPlayer && !playerShot)
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
         rigid2d.bodyType = RigidbodyType2D.Dynamic;
         rigid2d.AddForce((mousePos[0] - mousePos[1]) * maxJump * (1 / 3f + 2 * gauge.GetComponent<Gauge>().charge / 3f) / Vector3.Distance(mousePos[0], mousePos[1]), ForceMode2D.Impulse);
         arrow.SetActive(false);
-    }
+    }//
 
     IEnumerator ForceCoroutine()
     {

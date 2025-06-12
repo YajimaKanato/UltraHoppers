@@ -1,13 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class ChangeInformation : MonoBehaviour
+public class SelectCharacter : MonoBehaviour
 {
     [Header("ChangeCredit")]
     [SerializeField]
     List<GameObject> info;
 
     private static int index = 0;
+    public static int Index {  get { return index; } }
 
     private void Start()
     {

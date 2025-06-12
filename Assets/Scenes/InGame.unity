@@ -515,8 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 0.8
-  maxJump: 40
+  lift: 0.85
+  maxJump: 46
   speed: 1
   arrow: {fileID: 1264956315}
   director: {fileID: 1399117634}
@@ -1179,7 +1179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350673536608434073, guid: f17f21325addd2144a8cbe65626e62d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3350673536608434073, guid: f17f21325addd2144a8cbe65626e62d9, type: 3}
       propertyPath: m_TagString
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 1.1
-  maxJump: 33
+  maxJump: 36
   speed: 1
   arrow: {fileID: 814395636}
   director: {fileID: 1399117634}
@@ -2996,7 +2996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0.9
-  maxJump: 45
+  maxJump: 47
   speed: 0.4
   arrow: {fileID: 1047220852}
   director: {fileID: 1399117634}
@@ -3982,7 +3982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0.7
-  maxJump: 47
+  maxJump: 52
   speed: 1
   arrow: {fileID: 1518414945}
   director: {fileID: 1399117634}

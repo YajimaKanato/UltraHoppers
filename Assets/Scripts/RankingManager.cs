@@ -18,8 +18,8 @@ public class RankingManager : MonoBehaviour
 
     void RankingSort()
     {
-        ranking.Add((ChangeInformation.Index, director.getMeter()));
-        ranking.OrderBy(x => x.Item2);
+        ranking.Add((SelectCharacter.Index, director.getMeter()));
+        ranking.Sort((a,b)=>a.Item2.CompareTo(b.Item2));
         ranking.Reverse();
         if (ranking.Count > 10)
         {
