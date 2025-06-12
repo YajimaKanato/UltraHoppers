@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SpaceKey : MonoBehaviour
 {
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(SpaceCoroutine());
     }

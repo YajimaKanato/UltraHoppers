@@ -7,7 +7,6 @@ public class GameDirector : MonoBehaviour
     [Header("Players")]
     [SerializeField]
     GameObject[] players;
-    GameObject player;
     Vector3 basePos;
     float nowPlayerPos;
     bool playerStop = false;
@@ -37,11 +36,6 @@ public class GameDirector : MonoBehaviour
         meter.SetActive(false);
     }
 
-    public void changeColor(Image image,Color color)
-    {
-        image.color = color;
-    }
-
     public void PlayerStop()
     {
         playerStop = true;
@@ -51,7 +45,6 @@ public class GameDirector : MonoBehaviour
 
     private void Awake()
     {
-        //player = players[ChangeInformation.Index];
         players[ChangeInformation.Index].SetActive(true);
         basePos = players[ChangeInformation.Index].transform.position;
     }

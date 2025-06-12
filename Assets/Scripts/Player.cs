@@ -38,6 +38,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject spaceKey;
 
+    [Header("Ranking")]
+    [SerializeField]
+    GameObject ranking;
+
     Vector3[] mousePos = new Vector3[2];
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
     bool playerShot = false;//ショットしたかどうか
@@ -130,6 +134,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ranking.SetActive(true);
         director.PlayerStop();
         spaceKey.SetActive(false);
         rigid2d.bodyType = RigidbodyType2D.Kinematic;

@@ -523,6 +523,7 @@ MonoBehaviour:
   gauge: {fileID: 1068692601}
   gaugeMax: {fileID: 1181889656}
   spaceKey: {fileID: 185188992}
+  ranking: {fileID: 202925202}
 --- !u!50 &190179229
 Rigidbody2D:
   serializedVersion: 5
@@ -592,6 +593,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3350673536608434054, guid: f17f21325addd2144a8cbe65626e62d9, type: 3}
   m_PrefabInstance: {fileID: 501528208}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &202925202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202925204}
+  - component: {fileID: 202925203}
+  m_Layer: 0
+  m_Name: RankingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &202925203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202925202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c832f82afb18a941a451c82ef4ce051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 1399117634}
+--- !u!4 &202925204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202925202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &242672572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8755464452546160012, guid: 68452bd7377dd2b41910f007afe5b944, type: 3}
@@ -1811,6 +1857,7 @@ MonoBehaviour:
   gauge: {fileID: 1068692601}
   gaugeMax: {fileID: 1181889656}
   spaceKey: {fileID: 185188992}
+  ranking: {fileID: 202925202}
 --- !u!4 &845127708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5746913914073418025, guid: 45ea87a17808486459aa6c4bb3da308a, type: 3}
@@ -2956,6 +3003,7 @@ MonoBehaviour:
   gauge: {fileID: 1068692601}
   gaugeMax: {fileID: 1181889656}
   spaceKey: {fileID: 185188992}
+  ranking: {fileID: 202925202}
 --- !u!1 &1664835744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3941,6 +3989,7 @@ MonoBehaviour:
   gauge: {fileID: 1068692601}
   gaugeMax: {fileID: 1181889656}
   spaceKey: {fileID: 185188992}
+  ranking: {fileID: 202925202}
 --- !u!4 &1914909867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5389646924553082500, guid: 5d1b1dffa52eefe419fee311ceb07425, type: 3}
@@ -4524,3 +4573,4 @@ SceneRoots:
   - {fileID: 833788049}
   - {fileID: 1910743648}
   - {fileID: 1607354576}
+  - {fileID: 202925204}
