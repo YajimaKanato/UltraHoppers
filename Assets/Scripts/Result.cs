@@ -10,8 +10,15 @@ public class Result : MonoBehaviour
     [Header("Result")]
     [SerializeField]
     Text result;
+
+    float meter;
     void Update()
     {
-        result.text = director.getMeter().ToString("F1") + "m";
+        meter = director.getMeter() * 30;
+        if (meter > 10000)
+        {
+            meter = 9999.9f;
+        }
+        result.text = meter.ToString("F1") + "m";
     }
 }

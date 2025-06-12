@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.51
+  m_FillAmount: 0.71
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.51
+  fillmax: 0.71
 --- !u!1 &44095053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.51
+  m_FillAmount: 0.71
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3061,7 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.51
+  fillmax: 0.71
 --- !u!1 &1245490058
 GameObject:
   m_ObjectHideFlags: 0

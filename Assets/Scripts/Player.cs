@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
     bool playerShot = false;//ショットしたかどうか
     bool falling = false;//落下し始めたかどうか
+    bool spaceEnable = true;
     Rigidbody2D rigid2d;
     Animator animator;
     Coroutine coroutine;
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour
 
         if (playerShot)
         {
-            if(rigid2d.linearVelocity.y < 2.0f && rigid2d.bodyType == RigidbodyType2D.Dynamic && spaceKey.activeInHierarchy == false)
+            if (rigid2d.linearVelocity.y < 2.0f && rigid2d.bodyType == RigidbodyType2D.Dynamic && spaceKey.activeInHierarchy == false)
             {
                 spaceKey.SetActive(true);
             }
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour
 
         if (falling)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && spaceEnable)
             {
                 StartCoroutine(ForceCoroutine());
             }
@@ -128,8 +129,10 @@ public class Player : MonoBehaviour
 
     IEnumerator ForceCoroutine()
     {
+        spaceEnable = false;
         rigid2d.AddForce(Vector3.up * lift, ForceMode2D.Impulse);
-        yield return null;
+        yield return new WaitForSeconds(0.08f);
+        spaceEnable = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

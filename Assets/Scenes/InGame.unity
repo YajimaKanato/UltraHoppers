@@ -1849,9 +1849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 1.1
+  lift: 1.15
   maxJump: 36
-  speed: 1
+  speed: 0.8
   arrow: {fileID: 814395636}
   director: {fileID: 1399117634}
   gauge: {fileID: 1068692601}
@@ -2996,7 +2996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0.9
-  maxJump: 47
+  maxJump: 48
   speed: 0.4
   arrow: {fileID: 1047220852}
   director: {fileID: 1399117634}
@@ -3983,7 +3983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lift: 0.7
   maxJump: 52
-  speed: 1
+  speed: 0.8
   arrow: {fileID: 1518414945}
   director: {fileID: 1399117634}
   gauge: {fileID: 1068692601}

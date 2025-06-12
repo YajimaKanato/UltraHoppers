@@ -11,7 +11,7 @@ public class Meter : MonoBehaviour
     [SerializeField]
     Text text;
 
-
+    float meter;
     private void Start()
     {
         text = text.GetComponent<Text>();
@@ -19,6 +19,11 @@ public class Meter : MonoBehaviour
 
     private void Update()
     {
-        text.text = director.getMeter().ToString("F1") + "m";
+        meter = director.getMeter() * 30;
+        if (meter > 10000)
+        {
+            meter = 9999.9f;
+        }
+        text.text = (director.getMeter() * 30).ToString("F1") + "m";
     }
 }
