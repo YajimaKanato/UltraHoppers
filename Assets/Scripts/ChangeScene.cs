@@ -24,7 +24,12 @@ public class ChangeScene : MonoBehaviour
     {
         if (name == "Select")
         {
-            player.GetComponent<TitlePlayer>().GameStart();
+            if (player != null)
+            {
+                Debug.Log("a");
+                player.GetComponent<TitlePlayer>().GameStart();
+            }
+            
             yield return new WaitForSeconds(0.4f);
         }
 

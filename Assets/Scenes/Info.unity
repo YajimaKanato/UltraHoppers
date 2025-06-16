@@ -704,37 +704,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373817982}
   m_CullTransparentMesh: 1
---- !u!1 &397646205
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 397646206}
-  m_Layer: 0
-  m_Name: Empty
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &397646206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397646205}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404247013
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1397034624}
-  player: {fileID: 397646205}
+  player: {fileID: 0}
 --- !u!1 &472555478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,13 +1265,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 410642392}
   - {fileID: 1078036849}
   - {fileID: 710134271}
   - {fileID: 56480348}
   - {fileID: 1355170019}
   - {fileID: 1316097516}
   - {fileID: 93228875}
-  - {fileID: 410642392}
   - {fileID: 1397034625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3038,8 +3007,8 @@ Transform:
   m_Children:
   - {fileID: 1551285586}
   - {fileID: 2080613591}
-  - {fileID: 1020116043}
   - {fileID: 1026725662}
+  - {fileID: 1020116043}
   - {fileID: 278033676}
   - {fileID: 1019249464}
   - {fileID: 1712598090}
@@ -4794,4 +4763,3 @@ SceneRoots:
   - {fileID: 2017100765}
   - {fileID: 539385499}
   - {fileID: 1663267127}
-  - {fileID: 397646206}

@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 437709221}
-  player: {fileID: 272293953}
+  player: {fileID: 0}
 --- !u!114 &252591421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 412231482}
+      - m_Target: {fileID: 252591420}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: SceneChange
         m_Mode: 5
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 437709221}
-  player: {fileID: 272293953}
+  player: {fileID: 0}
 --- !u!114 &412231483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 412231482}
+      - m_Target: {fileID: 1070273345}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: SceneChange
         m_Mode: 5

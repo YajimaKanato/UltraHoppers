@@ -11,7 +11,7 @@ public class ScoreGroup : MonoBehaviour
         {
             if (RankingManager.Ranking[i].Item2 > 10000)
             {
-                texts[i].text += "9999.9 m";
+                texts[i].text = "9999.9 m";
             }
             else
             {
