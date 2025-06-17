@@ -19,12 +19,21 @@ public class ChangeScene : MonoBehaviour
     public void SceneChange(string name)
     {
         image.SetActive(true);
-        coroutine = StartCoroutine(SceneChangeCoroutine(name));
         se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
+        coroutine = StartCoroutine(SceneChangeCoroutine(name));
     }
 
     IEnumerator SceneChangeCoroutine(string name)
     {
+        if (name == "InGame")
+        {
+            se.GameStartButtonSE();
+        }
+        else
+        {
+            se.SceneButtonSE();
+        }
+
         if (name == "Select")
         {
             if (player != null)
@@ -36,6 +45,7 @@ public class ChangeScene : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
         }
 
+        
         Debug.Log("FadeOut");
         float alpha = 0.0f;
         while (alpha != 1)
@@ -50,13 +60,6 @@ public class ChangeScene : MonoBehaviour
         }
         SceneManager.LoadScene(name);
 
-        if (name == "InGame")
-        {
-            se.GameStartButtonSE();
-        }
-        else
-        {
-            se.SceneButtonSE();
-        }
+        
     }
 }

@@ -97,7 +97,6 @@ public class Player : MonoBehaviour
             {
                 animator.SetBool("Fly", true);
                 coroutine = StartCoroutine(RotateCoroutine());
-                se.PlayerShotSEStop();
                 se.LiftSE();
                 falling = true;
             }
@@ -145,6 +144,7 @@ public class Player : MonoBehaviour
         ranking.SetActive(true);
         director.PlayerStop();
         spaceKey.SetActive(false);
+        se.PlayerSEStop();
         se.LiftSEStop();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         rigid2d.linearVelocity = Vector3.zero;

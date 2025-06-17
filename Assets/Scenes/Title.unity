@@ -666,13 +666,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8688845f7b4a10741b106d60483f7088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneButton: {fileID: 0}
-  infoButton: {fileID: 0}
-  gameStartButton: {fileID: 0}
+  sceneButton: {fileID: 8300000, guid: d64f1603dbd3f1447b8b207f067ddc19, type: 3}
+  infoButton: {fileID: 8300000, guid: 4018bbbf6eb2fe64ab16080d5e9fcb5d, type: 3}
+  gameStartButton: {fileID: 8300000, guid: f1caa9170bf85c141b9dcf7d30159670, type: 3}
   gaugeCharge:
   - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
+  - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
+  - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
   gaugeSet: {fileID: 0}
-  playerShot: {fileID: 0}
+  playerShot: {fileID: 8300000, guid: a335b78d3ac7a6d4a9e615883594ae96, type: 3}
   lift: {fileID: 0}
 --- !u!4 &371382888
 Transform:
@@ -1691,7 +1693,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -126,7 +126,7 @@ public class SEManager : MonoBehaviour
         }
     }
 
-    public void PlayerShotSEStop()
+    public void PlayerSEStop()
     {
         player.Stop();
     }

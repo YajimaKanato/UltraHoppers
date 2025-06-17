@@ -9,9 +9,12 @@ public class ChangeCredit : MonoBehaviour
 
     private static int index = 0;
 
+    SEManager se;
+
     private void Start()
     {
         credit[index].SetActive(true);
+        se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
     public void InfoChange(int i)
@@ -30,5 +33,6 @@ public class ChangeCredit : MonoBehaviour
         }
         index %= credit.Count;
         credit[index].SetActive(true);
+        se.InfoButtonSE();
     }
 }
