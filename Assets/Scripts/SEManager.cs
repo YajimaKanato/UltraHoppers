@@ -34,7 +34,7 @@ public class SEManager : MonoBehaviour
     AudioSource[] audioSource;
     private static SEManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {
@@ -99,7 +99,8 @@ public class SEManager : MonoBehaviour
         if (gauge != null)
         {
             gauge.loop = true;
-            gauge.PlayOneShot(gaugeCharge[index]);
+            gauge.clip = gaugeCharge[index];
+            gauge.Play();
         }
     }
 
@@ -120,7 +121,8 @@ public class SEManager : MonoBehaviour
         if (player != null)
         {
             player.loop = true;
-            player.PlayOneShot(playerShot);
+            player.clip = playerShot;
+            player.Play();
         }
     }
 
@@ -136,7 +138,8 @@ public class SEManager : MonoBehaviour
         if (liftSE != null)
         {
             liftSE.loop = true;
-            liftSE.PlayOneShot(lift);
+            liftSE.clip = lift;
+            liftSE.Play();
         }
     }
 

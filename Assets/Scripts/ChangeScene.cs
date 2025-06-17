@@ -20,7 +20,7 @@ public class ChangeScene : MonoBehaviour
     {
         image.SetActive(true);
         coroutine = StartCoroutine(SceneChangeCoroutine(name));
-        se = GetComponent<SEManager>();
+        se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
     IEnumerator SceneChangeCoroutine(string name)

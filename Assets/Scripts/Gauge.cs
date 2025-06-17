@@ -18,7 +18,7 @@ public class Gauge : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        se = GetComponent<SEManager>();
+        se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
     public void StartCharge()
     {

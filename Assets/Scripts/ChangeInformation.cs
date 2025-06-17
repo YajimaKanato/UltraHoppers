@@ -14,7 +14,7 @@ public class ChangeInformation : MonoBehaviour
     private void Start()
     {
         info[index].SetActive(true);
-        se = GetComponent<SEManager>();
+        se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
     public void InfoChange(int i)

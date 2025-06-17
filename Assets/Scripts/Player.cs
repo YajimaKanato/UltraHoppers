@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         rigid2d = GetComponent<Rigidbody2D>();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         animator = GetComponent<Animator>();
-        se = GetComponent<SEManager>();
+        se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
     private void Update()

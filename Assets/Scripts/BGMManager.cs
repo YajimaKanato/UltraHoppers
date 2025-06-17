@@ -25,13 +25,20 @@ public class BGMManager : MonoBehaviour
     AudioSource audioSource;
     private static BGMManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                Debug.Log("a");
+            }
+            DontDestroyOnLoad(gameObject);
+            
+            
+            
         }
         else
         {
