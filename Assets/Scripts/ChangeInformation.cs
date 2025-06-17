@@ -9,9 +9,12 @@ public class ChangeInformation : MonoBehaviour
 
     private static int index = 0;
 
+    SEManager se;
+
     private void Start()
     {
         info[index].SetActive(true);
+        se = GetComponent<SEManager>();
     }
 
     public void InfoChange(int i)
@@ -30,5 +33,6 @@ public class ChangeInformation : MonoBehaviour
         }
         index %= info.Count;
         info[index].SetActive(true);
+        se.InfoButtonSE();
     }
 }

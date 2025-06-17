@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class Fade : MonoBehaviour
 {
     private void Start()
     {
+        BGMChange();
         StartCoroutine(FadeInCoroutine());
     }
 
@@ -25,5 +27,30 @@ public class Fade : MonoBehaviour
             yield return null;
         }
         this.gameObject.SetActive(false);
+    }
+
+    void BGMChange()
+    {
+        BGMManager bgm = GameObject.FindGameObjectWithTag("BGMManager").GetComponent<BGMManager>();
+        if (SceneManager.GetActiveScene().name=="Title")
+        {
+            bgm.TitleBGM();
+        }
+        else if(SceneManager.GetActiveScene().name == "InGame")
+        {
+            bgm.InGame();
+        }
+        else if (SceneManager.GetActiveScene().name == "Info")
+        {
+            bgm.InfoBGM();
+        }
+        else if (SceneManager.GetActiveScene().name == "Credit")
+        {
+            bgm.CreditBGM();
+        }
+        else if (SceneManager.GetActiveScene().name == "Select")
+        {
+            bgm.SelectBGM();
+        }
     }
 }

@@ -10,9 +10,12 @@ public class SelectCharacter : MonoBehaviour
     private static int index = 0;
     public static int Index {  get { return index; } }
 
+    SEManager se;
+
     private void Start()
     {
         info[index].SetActive(true);
+        se = GetComponent<SEManager>();
     }
 
     public void InfoChange(int i)
@@ -31,5 +34,6 @@ public class SelectCharacter : MonoBehaviour
         }
         index %= info.Count;
         info[index].SetActive(true);
+        se.InfoButtonSE();
     }
 }

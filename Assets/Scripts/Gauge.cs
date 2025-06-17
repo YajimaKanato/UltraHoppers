@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,26 +14,33 @@ public class Gauge : MonoBehaviour
     Coroutine coroutine;
     public float charge;
 
+    SEManager se;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        se = GetComponent<SEManager>();
     }
     public void StartCharge()
     {
         if (coroutine == null)
         {
             coroutine = StartCoroutine(GaugeCoroutine());
+            switch (SelectCharacter.Index)
+            {
+                case 0:
+                    se.GaugeChargeSE(0);
+                    break;
+                case 1:
+                case 2:
+                    se.GaugeChargeSE(1);
+                    break;
+                case 3:
+                    se.GaugeChargeSE(2);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
-    
-    public void StopCharge()
-    {
-        review.GetComponent<Review>().GetReview();
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-        }
-        StartCoroutine(InActiveCoroutine());
     }
 
     IEnumerator GaugeCoroutine()
@@ -52,6 +60,16 @@ public class Gauge : MonoBehaviour
             this.gameObject.GetComponent<Image>().fillAmount = charge;
             yield return null;
         }
+    }
+    public void StopCharge()
+    {
+        review.GetComponent<Review>().GetReview();
+        se.GaugeSetSE();
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        StartCoroutine(InActiveCoroutine());
     }
 
     IEnumerator InActiveCoroutine()

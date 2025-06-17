@@ -14,10 +14,13 @@ public class ChangeScene : MonoBehaviour
     GameObject player;
 
     Coroutine coroutine;
+
+    SEManager se;
     public void SceneChange(string name)
     {
         image.SetActive(true);
         coroutine = StartCoroutine(SceneChangeCoroutine(name));
+        se = GetComponent<SEManager>();
     }
 
     IEnumerator SceneChangeCoroutine(string name)
@@ -46,5 +49,14 @@ public class ChangeScene : MonoBehaviour
             yield return null;
         }
         SceneManager.LoadScene(name);
+
+        if (name == "InGame")
+        {
+            se.GameStartButtonSE();
+        }
+        else
+        {
+            se.SceneButtonSE();
+        }
     }
 }

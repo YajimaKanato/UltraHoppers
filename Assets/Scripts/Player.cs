@@ -51,11 +51,13 @@ public class Player : MonoBehaviour
     Animator animator;
     Coroutine coroutine;
 
+    SEManager se;
     private void Start()
     {
         rigid2d = GetComponent<Rigidbody2D>();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         animator = GetComponent<Animator>();
+        se = GetComponent<SEManager>();
     }
 
     private void Update()
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
             {
                 animator.SetBool("Fly", true);
                 coroutine = StartCoroutine(RotateCoroutine());
+                se.PlayerShotSEStop();
+                se.LiftSE();
                 falling = true;
             }
         }
@@ -125,6 +129,7 @@ public class Player : MonoBehaviour
         rigid2d.bodyType = RigidbodyType2D.Dynamic;
         rigid2d.AddForce((mousePos[0] - mousePos[1]).normalized * maxJump * (1 / 3f + 2 * gauge.GetComponent<Gauge>().charge / 3f), ForceMode2D.Impulse);
         arrow.SetActive(false);
+        se.PlayerShotSE();
     }//
 
     IEnumerator ForceCoroutine()
@@ -140,6 +145,7 @@ public class Player : MonoBehaviour
         ranking.SetActive(true);
         director.PlayerStop();
         spaceKey.SetActive(false);
+        se.LiftSEStop();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         rigid2d.linearVelocity = Vector3.zero;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
