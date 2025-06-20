@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.71
+  m_FillAmount: 0.7
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.71
+  fillmax: 0.7
 --- !u!1 &44095053
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,12 +941,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2030241265}
   - {fileID: 1158760438}
-  - {fileID: 442373273}
+  - {fileID: 2030241265}
   - {fileID: 1868369034}
-  - {fileID: 1020010561}
+  - {fileID: 442373273}
   - {fileID: 1536057017}
+  - {fileID: 1020010561}
   m_Father: {fileID: 1674817738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350531940
@@ -1194,12 +1194,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 211630598}
   - {fileID: 2140877860}
-  - {fileID: 1584670020}
+  - {fileID: 211630598}
   - {fileID: 2039544780}
-  - {fileID: 11852061}
+  - {fileID: 1584670020}
   - {fileID: 1107188152}
+  - {fileID: 11852061}
   m_Father: {fileID: 2045660588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517063552
@@ -1536,12 +1536,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1940997552}
   - {fileID: 1074610058}
-  - {fileID: 1149230675}
+  - {fileID: 1940997552}
   - {fileID: 1052624183}
-  - {fileID: 996063816}
+  - {fileID: 1149230675}
   - {fileID: 222107336}
+  - {fileID: 996063816}
   m_Father: {fileID: 44095054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576961762
@@ -2051,12 +2051,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1115817784}
   - {fileID: 245340543}
-  - {fileID: 600812092}
+  - {fileID: 1115817784}
   - {fileID: 153220504}
-  - {fileID: 1230998877}
+  - {fileID: 600812092}
   - {fileID: 544408768}
+  - {fileID: 1230998877}
   m_Father: {fileID: 615566041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996063815
@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.51
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.51
+  fillmax: 0.5
 --- !u!1 &1020010560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.51
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2749,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.51
+  fillmax: 0.5
 --- !u!1 &1158760437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.71
+  m_FillAmount: 0.7
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3061,7 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.71
+  fillmax: 0.7
 --- !u!1 &1245490058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4017,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.51
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -4042,7 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36a1f2b8abc3d54ebd895e364a44ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillmax: 0.51
+  fillmax: 0.5
 --- !u!1 &2030241264
 GameObject:
   m_ObjectHideFlags: 0

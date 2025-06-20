@@ -134,8 +134,11 @@ public class Player : MonoBehaviour
     IEnumerator ForceCoroutine()
     {
         spaceEnable = false;
-        rigid2d.AddForce(Vector3.up * lift, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.08f);
+        //rigid2d.AddForce(Vector3.up * lift, ForceMode2D.Impulse);
+        rigid2d.gravityScale = lift;
+        yield return new WaitForSeconds(1/16f);
+        rigid2d.gravityScale = 1.0f;
+        //yield return new WaitForSeconds(0.08f);
         spaceEnable = true;
     }
 
@@ -146,6 +149,7 @@ public class Player : MonoBehaviour
         spaceKey.SetActive(false);
         se.PlayerSEStop();
         se.LiftSEStop();
+        se.SetGroundSE();
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         rigid2d.linearVelocity = Vector3.zero;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,26 +25,11 @@ public class Gauge : MonoBehaviour
     {
         if (coroutine == null)
         {
-            coroutine = StartCoroutine(GaugeCoroutine());
-            switch (SelectCharacter.Index)
-            {
-                case 0:
-                    se.GaugeChargeSE(0);
-                    break;
-                case 1:
-                case 2:
-                    se.GaugeChargeSE(1);
-                    break;
-                case 3:
-                    se.GaugeChargeSE(2);
-                    break;
-                default:
-                    break;
-            }
+            coroutine = StartCoroutine(GaugeCoroutine(SelectCharacter.Index));
         }
     }
 
-    IEnumerator GaugeCoroutine()
+    IEnumerator GaugeCoroutine(int index)
     {
         charge = 0.0f;
         while (true)
@@ -52,10 +38,29 @@ public class Gauge : MonoBehaviour
             {
                 charge = 0.0f;
             }
+            if (charge == 0.0f)
+            {
+                switch (index)
+                {
+                    case 0:
+                        se.GaugeChargeSE(0);
+                        break;
+                    case 1:
+                    case 2:
+                        se.GaugeChargeSE(1);
+                        break;
+                    case 3:
+                        se.GaugeChargeSE(2);
+                        break;
+                    default:
+                        break;
+                }
+            }
             charge += Time.deltaTime / player.GetComponent<Player>().speed;
             if (charge > 1.0f)
             {
                 charge = 1.0f;
+                se.GaugeChargeStopSE();
             }
             this.gameObject.GetComponent<Image>().fillAmount = charge;
             yield return null;
@@ -64,6 +69,7 @@ public class Gauge : MonoBehaviour
     public void StopCharge()
     {
         review.GetComponent<Review>().GetReview();
+        se.GaugeChargeStopSE();
         se.GaugeSetSE();
         if (coroutine != null)
         {

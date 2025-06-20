@@ -670,12 +670,14 @@ MonoBehaviour:
   infoButton: {fileID: 8300000, guid: 4018bbbf6eb2fe64ab16080d5e9fcb5d, type: 3}
   gameStartButton: {fileID: 8300000, guid: f1caa9170bf85c141b9dcf7d30159670, type: 3}
   gaugeCharge:
-  - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  - {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  gaugeSet: {fileID: 0}
+  - {fileID: 8300000, guid: 53be80638d6ed0341bcbc5aa6d6b5343, type: 3}
+  - {fileID: 8300000, guid: 01256fdaacfffd44e8ad7b7cc126e2d5, type: 3}
+  - {fileID: 8300000, guid: f73065bb3a7305a408eae88a34709e70, type: 3}
+  gaugeSet: {fileID: 8300000, guid: 2fb354787f8b01b4185026d22a01d2f0, type: 3}
   playerShot: {fileID: 8300000, guid: a335b78d3ac7a6d4a9e615883594ae96, type: 3}
-  lift: {fileID: 0}
+  lift: {fileID: 8300000, guid: 607026548264402479cd9838eb299ed1, type: 3}
+  setGround: {fileID: 8300000, guid: 17821bfde1393df49a5938b63e25702d, type: 3}
+  mixer: {fileID: 4248486411530515376, guid: 16a4ed39e6f7e674ba0d7dc41ec950d0, type: 2}
 --- !u!4 &371382888
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,7 +1078,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Ultra Hppers
+  m_Text: Ultra Gliders
 --- !u!222 &442805189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1678,11 +1680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4796a4907af39d4c8a8f56c31a1fcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  info: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  credit: {fileID: 8300000, guid: 3627dd3eb32992349b2eb34d08d95c02, type: 3}
-  select: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  inGame: {fileID: 8300000, guid: 3627dd3eb32992349b2eb34d08d95c02, type: 3}
+  title: {fileID: 8300000, guid: 5e8e8524fca3e0d4ca2e1d6857ebc78a, type: 3}
+  info: {fileID: 8300000, guid: f0489bdc2f1ffa9429d1f8b38a4355ca, type: 3}
+  credit: {fileID: 8300000, guid: cb82deeaacb2e5c43aea63195fc59056, type: 3}
+  select: {fileID: 8300000, guid: c07547e01366f424c8a5f6857d860a20, type: 3}
 --- !u!82 &1829902301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1692,10 +1693,10 @@ AudioSource:
   m_GameObject: {fileID: 1829902299}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 41e71d208576dff458af045250bf4876, type: 3}
-  m_PlayOnAwake: 0
+  OutputAudioMixerGroup: {fileID: -169557901223611096, guid: 16a4ed39e6f7e674ba0d7dc41ec950d0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 5e8e8524fca3e0d4ca2e1d6857ebc78a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5e8e8524fca3e0d4ca2e1d6857ebc78a, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

@@ -36,10 +36,6 @@ public class Fade : MonoBehaviour
         {
             bgm.TitleBGM();
         }
-        else if(SceneManager.GetActiveScene().name == "InGame")
-        {
-            bgm.InGame();
-        }
         else if (SceneManager.GetActiveScene().name == "Info")
         {
             bgm.InfoBGM();
@@ -51,6 +47,10 @@ public class Fade : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Select")
         {
             bgm.SelectBGM();
+        }
+        else if (SceneManager.GetActiveScene().name == "InGame")
+        {
+            bgm.StopBGM();
         }
     }
 }

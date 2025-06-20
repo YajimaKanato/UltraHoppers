@@ -38,7 +38,6 @@ public class ChangeScene : MonoBehaviour
         {
             if (player != null)
             {
-                Debug.Log("a");
                 player.GetComponent<TitlePlayer>().GameStart();
             }
             

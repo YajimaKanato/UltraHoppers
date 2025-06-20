@@ -820,8 +820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: -430}
-  m_SizeDelta: {x: 400, y: 200}
+  m_AnchoredPosition: {x: 700, y: -400}
+  m_SizeDelta: {x: 350, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410642393
 MonoBehaviour:
@@ -3143,21 +3143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e561076505548af48bfafef906b48c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8176874103837133925, guid: 66027538e8b55084787852a61d9f7646, type: 3}
-        m_TargetAssemblyTypeName: BGMManager, Assembly-CSharp
-        m_MethodName: InfoBGM
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1397034627
 MonoBehaviour:
   m_ObjectHideFlags: 0

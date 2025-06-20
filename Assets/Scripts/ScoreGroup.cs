@@ -15,8 +15,9 @@ public class ScoreGroup : MonoBehaviour
             }
             else
             {
-                texts[i].text = ((int)(RankingManager.Ranking[i].Item2)).ToString();
-                texts[i].text += (RankingManager.Ranking[i].Item2 - (int)(RankingManager.Ranking[i].Item2)).ToString("F1").TrimStart('0');
+                texts[i].text = (Mathf.Floor(RankingManager.Ranking[i].Item2 * 10) / 10).ToString();
+                //texts[i].text = ((int)(RankingManager.Ranking[i].Item2)).ToString("");
+                //texts[i].text += (Mathf.Floor((RankingManager.Ranking[i].Item2 - (int)(RankingManager.Ranking[i].Item2)) * 10) / 10).ToString("F1").TrimStart('0');
                 texts[i].text += " m";
             }
         }

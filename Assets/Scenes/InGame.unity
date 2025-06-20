@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 0.7
+  lift: 0.25
   maxJump: 45
   speed: 1
   arrow: {fileID: 1264956315}
@@ -1849,8 +1849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 1.15
-  maxJump: 40
+  lift: 0.01
+  maxJump: 42
   speed: 0.8
   arrow: {fileID: 814395636}
   director: {fileID: 1399117634}
@@ -3074,9 +3074,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 0.9
+  lift: 0.2
   maxJump: 48
-  speed: 0.4
+  speed: 0.5
   arrow: {fileID: 1047220852}
   director: {fileID: 1399117634}
   gauge: {fileID: 1068692601}
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a038ea95a6696b4ca4f36d8727f90e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: 0.6
+  lift: 0.45
   maxJump: 50
   speed: 0.8
   arrow: {fileID: 1518414945}

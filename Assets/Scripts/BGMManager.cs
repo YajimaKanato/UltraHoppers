@@ -18,10 +18,6 @@ public class BGMManager : MonoBehaviour
     [SerializeField]
     AudioClip select;
 
-    [Header("InGame")]
-    [SerializeField]
-    AudioClip inGame;
-
     AudioSource audioSource;
     private static BGMManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,14 +27,7 @@ public class BGMManager : MonoBehaviour
         {
             instance = this;
             audioSource = GetComponent<AudioSource>();
-            if (audioSource != null)
-            {
-                Debug.Log("a");
-            }
             DontDestroyOnLoad(gameObject);
-            
-            
-            
         }
         else
         {
@@ -64,7 +53,6 @@ public class BGMManager : MonoBehaviour
             audioSource.clip = info;
         audioSource.Play();
         }
-        
     }
 
     public void CreditBGM()
@@ -75,7 +63,6 @@ public class BGMManager : MonoBehaviour
             audioSource.clip = credit;
             audioSource.Play();
         }
-        
     }
 
     public void SelectBGM()
@@ -86,17 +73,10 @@ public class BGMManager : MonoBehaviour
             audioSource.clip = select;
             audioSource.Play();
         }
-        
     }
 
-    public void InGame()
+    public void StopBGM()
     {
-        Debug.Log("InGameBGM");
-        if (audioSource.clip != null)
-        {
-            audioSource.clip = inGame;
-            audioSource.Play();
-        }
-        
+        audioSource.Stop();
     }
 }

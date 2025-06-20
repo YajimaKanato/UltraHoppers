@@ -416,7 +416,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Music
 
-'
+    Howling-Indicator
+
+    BGM:MusMus'
 --- !u!222 &408367933
 CanvasRenderer:
   m_ObjectHideFlags: 0

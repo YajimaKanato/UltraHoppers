@@ -19,6 +19,6 @@ public class Result : MonoBehaviour
         {
             meter = 9999.9f;
         }
-        result.text = meter.ToString("F1") + "m";
+        result.text = (Mathf.Floor(meter * 10) / 10).ToString("F1") + "m";
     }
 }

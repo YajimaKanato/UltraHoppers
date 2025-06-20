@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SEManager : MonoBehaviour
 {
@@ -31,6 +32,14 @@ public class SEManager : MonoBehaviour
     [SerializeField]
     AudioClip lift;
 
+    [Header("SetGround")]
+    [SerializeField]
+    AudioClip setGround;
+
+    [Header("AudioMixer")]
+    [SerializeField]
+    AudioMixerGroup mixer;
+
     AudioSource[] audioSource;
     private static SEManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,6 +61,11 @@ public class SEManager : MonoBehaviour
         }
     }
 
+    void SetMixer(AudioSource source)
+    {
+        source.outputAudioMixerGroup = mixer;
+    }
+
     AudioSource GetUnusedAudioSource()
     {
         Debug.Log("getUnused");
@@ -70,6 +84,7 @@ public class SEManager : MonoBehaviour
         var audiosource = GetUnusedAudioSource();
         if (audiosource != null)
         {
+            SetMixer(audiosource);
             audiosource.PlayOneShot(sceneButton);
         }
     }
@@ -79,6 +94,7 @@ public class SEManager : MonoBehaviour
         var audiosource = GetUnusedAudioSource();
         if (audiosource != null)
         {
+            SetMixer(audiosource);
             audiosource.PlayOneShot(infoButton);
         }
     }
@@ -95,12 +111,21 @@ public class SEManager : MonoBehaviour
     AudioSource gauge;
     public void GaugeChargeSE(int index)
     {
-        gauge = GetUnusedAudioSource();
-        if (gauge != null)
+        
+        if (gauge == null)
         {
-            gauge.loop = true;
+            gauge = GetUnusedAudioSource();
             gauge.clip = gaugeCharge[index];
             gauge.Play();
+        }
+    }
+
+    public void GaugeChargeStopSE()
+    {
+        if (gauge != null)
+        {
+            gauge.Stop();
+            gauge = null;
         }
     }
 
@@ -109,7 +134,6 @@ public class SEManager : MonoBehaviour
         var audiosource = GetUnusedAudioSource();
         if (audiosource != null)
         {
-            gauge.Stop();
             audiosource.PlayOneShot(gaugeSet);
         }
     }
@@ -117,9 +141,11 @@ public class SEManager : MonoBehaviour
     AudioSource player;
     public void PlayerShotSE()
     {
-        player = GetUnusedAudioSource();
-        if (player != null)
+        
+        if (player == null)
         {
+            player = GetUnusedAudioSource();
+            SetMixer(player);
             player.loop = true;
             player.clip = playerShot;
             player.Play();
@@ -128,15 +154,20 @@ public class SEManager : MonoBehaviour
 
     public void PlayerSEStop()
     {
-        player.Stop();
+        if(player != null)
+        {
+            player.Stop();
+            player = null;
+        }
     }
 
     AudioSource liftSE;
     public void LiftSE()
     {
-        liftSE = GetUnusedAudioSource();
-        if (liftSE != null)
+        
+        if (liftSE == null)
         {
+            liftSE = GetUnusedAudioSource();
             liftSE.loop = true;
             liftSE.clip = lift;
             liftSE.Play();
@@ -146,5 +177,14 @@ public class SEManager : MonoBehaviour
     public void LiftSEStop()
     {
         liftSE.Stop();
+    }
+
+    public void SetGroundSE()
+    {
+        var audiosource = GetUnusedAudioSource();
+        if (audiosource != null)
+        {
+            audiosource.PlayOneShot(setGround);
+        }
     }
 }
