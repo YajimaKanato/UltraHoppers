@@ -25,7 +25,7 @@ public class ChangeScene : MonoBehaviour
 
     IEnumerator SceneChangeCoroutine(string name)
     {
-        if (name == "InGame")
+        if (name == "InGame" && SceneManager.GetActiveScene().name == "Select")
         {
             se.GameStartButtonSE();
         }
@@ -40,11 +40,11 @@ public class ChangeScene : MonoBehaviour
             {
                 player.GetComponent<TitlePlayer>().GameStart();
             }
-            
+
             yield return new WaitForSeconds(0.4f);
         }
 
-        
+
         Debug.Log("FadeOut");
         float alpha = 0.0f;
         while (alpha != 1)
@@ -59,6 +59,6 @@ public class ChangeScene : MonoBehaviour
         }
         SceneManager.LoadScene(name);
 
-        
+
     }
 }
