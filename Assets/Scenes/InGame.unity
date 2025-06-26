@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0.01
-  maxJump: 42
+  maxJump: 43
   speed: 0.8
   arrow: {fileID: 814395636}
   director: {fileID: 1399117634}
