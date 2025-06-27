@@ -156,7 +156,7 @@ public class SEManager : MonoBehaviour
     {
         if(player != null)
         {
-            player.Stop();
+            player?.Stop();
             player = null;
         }
     }
@@ -176,7 +176,7 @@ public class SEManager : MonoBehaviour
 
     public void LiftSEStop()
     {
-        liftSE.Stop();
+        liftSE?.Stop();
     }
 
     public void SetGroundSE()

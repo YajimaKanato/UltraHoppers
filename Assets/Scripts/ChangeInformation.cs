@@ -7,6 +7,9 @@ public class ChangeInformation : MonoBehaviour
     [SerializeField]
     List<GameObject> info;
 
+    [SerializeField]
+    List<GameObject> list;
+
     private static int index = 0;
 
     SEManager se;
@@ -14,6 +17,7 @@ public class ChangeInformation : MonoBehaviour
     private void Start()
     {
         info[index].SetActive(true);
+        list[index].SetActive(true);
         se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
@@ -26,6 +30,7 @@ public class ChangeInformation : MonoBehaviour
         }
 
         info[index].SetActive(false);
+        list[index].SetActive(false);
         index += i;
         if (index < 0)
         {
@@ -33,6 +38,7 @@ public class ChangeInformation : MonoBehaviour
         }
         index %= info.Count;
         info[index].SetActive(true);
+        list[index].SetActive(true);
         se.InfoButtonSE();
     }
 }

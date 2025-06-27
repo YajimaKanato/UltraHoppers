@@ -11,6 +11,9 @@ public class Result : MonoBehaviour
     [SerializeField]
     Text result;
 
+    [SerializeField]
+    Text te;
+
     float meter;
     void Update()
     {
@@ -20,5 +23,19 @@ public class Result : MonoBehaviour
             meter = 9999.9f;
         }
         result.text = (Mathf.Floor(meter * 10) / 10).ToString("F1") + "m";
+
+        if (ModeSelect.Achieve)
+        {
+            if (Mathf.Abs(director.getMeter() * 30 - GameDirector.Ach) <= 500)
+            {
+                te.color = Color.yellow;
+                te.text = "Success!!!";
+            }
+            else
+            {
+                te.color = Color.red;
+                te.text = "Failure...";
+            }
+        }
     }
 }

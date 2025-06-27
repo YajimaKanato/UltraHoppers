@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using unityroom.Api;
 
 public class RankingManager : MonoBehaviour
 {
@@ -18,12 +19,16 @@ public class RankingManager : MonoBehaviour
 
     void RankingSort()
     {
-        ranking.Add((SelectCharacter.Index, director.getMeter() * 30));
-        ranking.Sort((a, b) => a.Item2.CompareTo(b.Item2));
-        ranking.Reverse();
-        if (ranking.Count > 10)
+        if (!ModeSelect.Achieve && !GameDirector.GG)
         {
-            ranking.RemoveAt(ranking.Count - 1);
+            ranking.Add((SelectCharacter.Index, director.getMeter() * 30));
+            ranking.Sort((a, b) => a.Item2.CompareTo(b.Item2));
+            ranking.Reverse();
+            if (ranking.Count > 10)
+            {
+                ranking.RemoveAt(ranking.Count - 1);
+            }
+            UnityroomApiClient.Instance.SendScore(1, director.getMeter() * 30, ScoreboardWriteMode.HighScoreDesc);
         }
     }
 }

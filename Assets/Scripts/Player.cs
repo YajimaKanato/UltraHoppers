@@ -42,6 +42,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject ranking;
 
+    [SerializeField]
+    GameObject text;
+
+
     Vector3[] mousePos = new Vector3[2];
     bool mouseOnPlayer = false;//マウスがプレイヤーに重なっているか
     bool playerShot = false;//ショットしたかどうか
@@ -58,11 +62,13 @@ public class Player : MonoBehaviour
         rigid2d.bodyType = RigidbodyType2D.Kinematic;
         animator = GetComponent<Animator>();
         se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
+        se.PlayerSEStop();
+        se.LiftSEStop();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !playerShot)
+        if (Input.GetMouseButtonDown(0) && !playerShot && !GameDirector.GG)
         {
             mousePos[0] = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos[0].z = 0;
@@ -136,7 +142,7 @@ public class Player : MonoBehaviour
         spaceEnable = false;
         //rigid2d.AddForce(Vector3.up * lift, ForceMode2D.Impulse);
         rigid2d.gravityScale = lift;
-        yield return new WaitForSeconds(1/16f);
+        yield return new WaitForSeconds(1 / 16f);
         rigid2d.gravityScale = 1.0f;
         //yield return new WaitForSeconds(0.08f);
         spaceEnable = true;
@@ -145,8 +151,9 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         ranking.SetActive(true);
-        director.PlayerStop();
+        if(!GameDirector.GG)director.PlayerStop();
         spaceKey.SetActive(false);
+        text.SetActive(false);
         se.PlayerSEStop();
         se.LiftSEStop();
         se.SetGroundSE();

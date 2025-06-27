@@ -7,6 +7,9 @@ public class SelectCharacter : MonoBehaviour
     [SerializeField]
     List<GameObject> info;
 
+    [SerializeField]
+    List<GameObject> players;
+
     private static int index = 0;
     public static int Index {  get { return index; } }
 
@@ -15,6 +18,7 @@ public class SelectCharacter : MonoBehaviour
     private void Start()
     {
         info[index].SetActive(true);
+        players[index].SetActive(true);
         se = GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>();
     }
 
@@ -27,6 +31,7 @@ public class SelectCharacter : MonoBehaviour
         }
 
         info[index].SetActive(false);
+        players[index].SetActive(false);
         index += i;
         if (index < 0)
         {
@@ -34,6 +39,7 @@ public class SelectCharacter : MonoBehaviour
         }
         index %= info.Count;
         info[index].SetActive(true);
+        players[index].SetActive(true);
         se.InfoButtonSE();
     }
 }
